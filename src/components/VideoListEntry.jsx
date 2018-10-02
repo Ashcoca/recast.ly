@@ -1,4 +1,4 @@
-import VideoList from './VideoList.js';
+// import VideoList from './VideoList.jsx';
 var VideoListEntry = (props) => (
 
   (
@@ -23,4 +23,4 @@ VideoListEntry.propTypes = {
 // In the ES6 spec, files are "modules" and do not share a top-level scope
 // `var` declarations will only exist globally where explicitly defined
 export default VideoListEntry;
-window.VideoListEntry = VideoListEntry;
+// window.VideoListEntry = VideoListEntry;
