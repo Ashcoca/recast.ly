@@ -8,18 +8,32 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
-    //   currVideo = exampleVideoData[0];
+      videosPack: exampleVideoData,
+      currVideo: exampleVideoData[0]
     };
   }
-  
-  handleClick() {
-    console.log('clicked');
-    // this.setState({
-    //   currVideo = 'clickedVideo';
-    //   console.log(currVideo);
-    // });
-    alert("Hello World!");
+
+  handleClick(event) {
+    // console.log(event.target.innerText)
+    // let temp = event.target.innerText;
+
+    this.setState({
+      currVideo: event
+    })
+    // let temp = event.target.innerText;
+    // this.setState(function(state) {
+    //   console.log(event)
+    //   return {
+    //     currVideoTitle: 
+    //   }
+    // })
+
+// state => ({
+      
+//       currVideoTitle: event.target
+//       // currVideoDis: 'changed'
+
+//     }))
   }
 
   render() {
@@ -32,10 +46,13 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer />
+            <VideoPlayer video={this.state.currVideo}/>
           </div>
           <div className="col-md-5">
-            <VideoList videos={exampleVideoData} currState={this.handleClick.bind(this)}/>
+            <VideoList 
+              videos={this.state.videosPack} 
+              currState={this.handleClick.bind(this)}
+            />
           </div>
         </div>
       </div>
